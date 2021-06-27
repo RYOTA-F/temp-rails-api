@@ -54,6 +54,31 @@ Rails.application.routes.draw do
 end
 ```
 
+## Other Commands
+- Webコンテナへのアクセス
+
+```
+docker exec -it rails-api-starter_web_1 bash
+```
+
+- モデルの作成
+
+```
+docker-compose run web rails g model {モデル名} {カラム名}:{型}
+```
+
+- マイグレーションの実行
+
+```
+docker-compose run web rails db:migrate
+```
+
+- コントローラーの作成
+
+```
+rails g controller api/v1/{コントローラー名}
+```
 ## Versions
-- mysql: 5.7
+- ruby: 2.5.9
 - rails: 5.2.2
+- mysql: 5.7
