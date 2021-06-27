@@ -34,3 +34,26 @@ default: &default
 ```
 docker-compose up -d
 ```
+
+6. DBを作成
+
+```
+docker-compose run web rails db:create
+```
+
+7. ルーティング名前空間を設定
+config/routes.rb
+
+```
+Rails.application.routes.draw do
+  namespace 'api' do
+    namespace 'v1' do
+      resources :posts
+    end
+  end
+end
+```
+
+## Versions
+- mysql: 5.7
+- rails: 5.2.2
